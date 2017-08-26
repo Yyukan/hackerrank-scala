@@ -5,14 +5,14 @@ package net.shtykhno.algorithms.crackingandcoding
   */
 object ArraysRightRotation {
 
-  def solution(a: Array[Int], k: Int): Array[Int] = {
-    if (a.isEmpty || a.length == 1 || k == 0) return a
+  def solution(a: Array[Int], r: Int): Array[Int] = {
+    if (a.isEmpty || a.length == 1 || r == 0) return a
 
-    val k1 = k % a.length
+    val d = r % a.length
 
-    if (k1 < 1) return a
+    if (d < 1) return a
 
-    a.slice(k1, a.length) ++ a.slice(0, k1)
+    a.slice(a.length - d, a.length) ++ a.slice(0, a.length - d)
   }
 
   def main(args: Array[String]) {
