@@ -5,19 +5,19 @@ package net.shtykhno.algorithms.crackingandcoding
   */
 object ArraysLeftRotation {
 
-  def solution(a: Array[Int], r: Int): Array[Int] = {
-    if (a.isEmpty || a.length == 1 || r == 0) return a
+  def solution(a: Array[Int], k: Int): Array[Int] = {
+    if (a.isEmpty || a.length == 1 || k == 0) return a
 
-    val d = r % a.length
+    val k1 = k % a.length
 
-    if (d < 1) return a
+    if (k1 < 1) return a
 
-    a.slice(a.length - d, a.length) ++ a.slice(0, a.length - d)
+    a.slice(k1, a.length) ++ a.slice(0, k1)
   }
 
   def main(args: Array[String]) {
     val sc = new java.util.Scanner (System.in)
-    var n = sc.nextInt()
+    var n = sc.nextInt()                                          
     var k = sc.nextInt()
     var a = new Array[Int](n)
     for(a_i <- 0 until n) {
