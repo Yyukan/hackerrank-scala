@@ -13,9 +13,8 @@ object MakingAnagramsArrays {
 
   /**
     * Calculate freq of chars from string a
-    * Subtract chars from string b
-    * If no such char increment result
-    * Add left freq to the result
+    * Calculate freq of chars from string b
+    * Return abs sum
     */
   def solution(a: String, b: String): Int = {
     val freq = Array.fill[Int](26)(0)
